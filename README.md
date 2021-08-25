@@ -12,9 +12,44 @@
 
 vue的element使用，遇到的问题
 
-返回顶部组件，
 
-分页的展示，element-ui 分页中的slot的用法\(自定义分页显示内容\) 
+
+A。 返回顶部组件，很简单的组件，坑在target这里，.main-box是我项目里面外层父元素的class名，.el-scrollbar__wrap，是官方自带的。
+   【 target表示目标dom, 这里即为el-main盒子的类名 】
+   【 el-backtop里面包裹的内容可以自定义换成需要的样式 】
+   【 因为原本项目中已经使用了el-scrollbar，element的隐藏组件，可能是影响到了，最开始这个组件怎么也展示不出来。】
+    其他问题出现，如何解决， https://juejin.cn/post/6844904181954773006
+    
+<el-backtop target=".main-box .el-scrollbar__wrap">
+    <div>
+      <i class="el-icon-top"></i>
+    </div>
+  </el-backtop>
+  
+  .el-backtop {
+     right: 40px !important;
+     bottom: 100px !important;
+     width: 62px;
+     height: 62px;
+     background: rgba(0, 0, 0, 0.15);
+     border-radius: 50%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     box-shadow: 0 0 0px white !important;
+     z-index: 999;
+     i {
+       font-size: 30px;
+       color: #ffffff;
+     }
+     &:hover {
+       background: rgba(0, 0, 0, 0.35);
+     }
+  }
+
+。。。。。。。。。。。。。。。。。。。。。。。。。。
+
+B。 分页的展示，element-ui 分页中的slot的用法\(自定义分页显示内容\) 
 
 官网![截屏2021-08-25下午2 55 44](https://user-images.githubusercontent.com/49188120/130747951-8e6efe20-4bfe-4861-9f4f-843a2e425f85.png)
 
@@ -24,7 +59,7 @@ vue的element使用，遇到的问题
 
 ![&#x622A;&#x5C4F;2021-08-25&#x4E0B;&#x5348;3 27 21](https://user-images.githubusercontent.com/49188120/130745843-b7f139b0-4d47-46f2-bbe4-c0bcd5d1426a.png) 
 ![&#x622A;&#x5C4F;2021-08-25&#x4E0B;&#x5348;3 27 26](https://user-images.githubusercontent.com/49188120/130745847-159aacd6-beaa-4e3a-92c9-6c44c2fa4c8f.png)  
-
+【 layout 里面的值可以随意改变位置，以达到我们所需要的效果。】
 <el-pagination
    background
    layout="prev, pager, next, slot, jumper"
