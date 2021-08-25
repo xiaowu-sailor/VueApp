@@ -22,27 +22,27 @@ vue的element使用，遇到的问题
 
 返回顶部组件，
 
-分页的展示，element-ui 分页中的slot的用法(自定义分页显示内容)
-![截屏2021-08-25下午2 55 44](https://user-images.githubusercontent.com/49188120/130743279-247ccc6f-2432-484a-910e-27980f150d5a.png)
-官网
+    分页的展示，element-ui 分页中的slot的用法(自定义分页显示内容)
+    ![截屏2021-08-25下午2 55 44](https://user-images.githubusercontent.com/49188120/130743279-247ccc6f-2432-484a-910e-27980f150d5a.png)
+    官网
 
-我们想要：![截屏2021-08-25下午2 54 26](https://user-images.githubusercontent.com/49188120/130743616-c4de42e0-78b8-4dee-9dd8-72d6587acef9.png)
+    我们想要：![截屏2021-08-25下午2 54 26](https://user-images.githubusercontent.com/49188120/130743616-c4de42e0-78b8-4dee-9dd8-72d6587acef9.png)
 
-所以需要我们调整一下分页
-![截屏2021-08-25下午3 27 21](https://user-images.githubusercontent.com/49188120/130745843-b7f139b0-4d47-46f2-bbe4-c0bcd5d1426a.png)
+    所以需要我们调整一下分页
+    ![截屏2021-08-25下午3 27 21](https://user-images.githubusercontent.com/49188120/130745843-b7f139b0-4d47-46f2-bbe4-c0bcd5d1426a.png)
 
-![截屏2021-08-25下午3 27 26](https://user-images.githubusercontent.com/49188120/130745847-159aacd6-beaa-4e3a-92c9-6c44c2fa4c8f.png)
-  <el-pagination
-    background
-    layout="prev, pager, next, slot, jumper"
-    prev-text="上一页"
-    next-text="下一页"
-    :current-page="form.page_id"
-    :total="pageTotal"
-    @current-change="onPageChange"
-  >
-    <span class="goodsFont">共 {{ totalShow }} 页</span>
-  </el-pagination>
+    ![截屏2021-08-25下午3 27 26](https://user-images.githubusercontent.com/49188120/130745847-159aacd6-beaa-4e3a-92c9-6c44c2fa4c8f.png)
+      <el-pagination
+        background
+        layout="prev, pager, next, slot, jumper"
+        prev-text="上一页"
+        next-text="下一页"
+        :current-page="form.page_id"
+        :total="pageTotal"
+        @current-change="onPageChange"
+      >
+        <span class="goodsFont">共 {{ totalShow }} 页</span>
+      </el-pagination>
 
 
 
