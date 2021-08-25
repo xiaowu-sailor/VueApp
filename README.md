@@ -16,15 +16,24 @@ vue的element使用，遇到的问题
 
 分页的展示，element-ui 分页中的slot的用法\(自定义分页显示内容\) 
 
-官网
-
-![](.gitbook/assets/image.png)
+官网![截屏2021-08-25下午2 55 44](https://user-images.githubusercontent.com/49188120/130747951-8e6efe20-4bfe-4861-9f4f-843a2e425f85.png)
 
 我们想要：![&#x622A;&#x5C4F;2021-08-25&#x4E0B;&#x5348;2 54 26](https://user-images.githubusercontent.com/49188120/130743616-c4de42e0-78b8-4dee-9dd8-72d6587acef9.png) 
 
 所以需要我们调整一下分页
 
- ![&#x622A;&#x5C4F;2021-08-25&#x4E0B;&#x5348;3 27 21](https://user-images.githubusercontent.com/49188120/130745843-b7f139b0-4d47-46f2-bbe4-c0bcd5d1426a.png) ![&#x622A;&#x5C4F;2021-08-25&#x4E0B;&#x5348;3 27 26](https://user-images.githubusercontent.com/49188120/130745847-159aacd6-beaa-4e3a-92c9-6c44c2fa4c8f.png)  
+![&#x622A;&#x5C4F;2021-08-25&#x4E0B;&#x5348;3 27 21](https://user-images.githubusercontent.com/49188120/130745843-b7f139b0-4d47-46f2-bbe4-c0bcd5d1426a.png) 
+![&#x622A;&#x5C4F;2021-08-25&#x4E0B;&#x5348;3 27 26](https://user-images.githubusercontent.com/49188120/130745847-159aacd6-beaa-4e3a-92c9-6c44c2fa4c8f.png)  
 
-
+<el-pagination
+   background
+   layout="prev, pager, next, slot, jumper"
+   prev-text="上一页"
+   next-text="下一页"
+   :current-page="form.page_id"
+   :total="pageTotal"
+   @current-change="onPageChange"
+ >
+   <span class="goodsFont">共 {{ totalShow }} 页</span>
+ </el-pagination>
 
